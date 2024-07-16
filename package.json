@@ -1,0 +1,30 @@
+{
+  "name": "procrastinare",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ShrekBenson/procrastinare.git"
+  },
+  "author": "Diego Antonio Angel Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShrekBenson/procrastinare/issues"
+  },
+  "homepage": "https://github.com/ShrekBenson/procrastinare#readme",
+  "description": "",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^6.0.1"
+  }
+}

@@ -1,0 +1,6 @@
+.side-menu{
+  padding: 25px;
+}
+.side-menu__block:not(:last-child){
+  margin-bottom: 50px;
+}

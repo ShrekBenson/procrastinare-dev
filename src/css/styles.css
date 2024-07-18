@@ -3,6 +3,17 @@
 @import url(./components/side-menu.css);
 @import url(./components/to-do-list.css);
 
+@font-face {
+  font-family: 'inter';
+  src: url(../fonts/inter.ttf) format('truetype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'darker';
+  src: url(../fonts/darker-grotesque.ttf) format('truetype');
+  font-style: normal;
+}
+
 :root{
   --main-color: #222831;
   --secundary-color: #D65A31;

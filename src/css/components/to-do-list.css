@@ -1,0 +1,22 @@
+.list{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 100px 100px 25px 100px;
+}
+.list__title{  
+  font-family: 'Inter';
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--complementary-1-color);
+}
+.list__rows{
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  overflow-y: auto;
+}
+.row{
+  flex-shrink: 0;
+  height: 100px;
+  border: 1px solid black;
+}

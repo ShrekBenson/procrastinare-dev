@@ -1,0 +1,131 @@
+dialog::backdrop{
+  backdrop-filter: blur(6px);
+  background-color: transparent;
+}
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+}
+.wraper{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: inherit;
+  height: inherit;
+  font-family: 'Inter';
+  border: 1px solid #00000010;
+}
+.modal__title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  background-color: var(--main-color);
+  color: var(--bg-color);
+}
+.modal__title>h2{
+  font-size: 1rem;
+  font-weight: 600;
+}
+.modal__title>p{
+  font-size: .75rem;
+  font-weight: 400;
+}
+.modal__title,
+.wraper>form{
+  padding: 0 25px;
+}
+.wraper>form{
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  flex: 1;
+  padding: 25px;
+}
+.new-task__title,
+.new-task__title>input{
+  width: 100%;
+}
+.new-task__title>input{
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #00000030;
+}
+.new-task__title>input::placeholder{  
+  font-weight: 600;
+  color: #00000050;
+}
+.new-task__dd-inputs{
+  display: flex;
+  column-gap: 25px;
+}
+.new-task__date,
+.new-task__priority,
+.new-task__description{
+  font-size: .75rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.new-task__date>label,
+.new-task__priority>label,
+.new-task__description>label{
+  font-weight: 600;
+  color: var(--complementary-1-color);
+}
+.new-task__date>input,
+.new-task__priority>select{
+  width: 150px;
+  height: 25px;
+}
+.new-task__description>textarea{
+  resize: none;
+  height: 100px;
+  font-size: 1rem;
+}
+.new-task__actions{
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+#createButton{
+  width: 150px;
+  height: 25px;
+  font-size: .75rem;
+  font-weight: 600;
+  background-color: var(--secundary-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 2px;
+}
+#cancelButton{
+  width: 100px;
+  height: 25px;
+  font-size: .75rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--complementary-1-color);
+  border: 1px solid var(--complementary-1-color);
+  border-radius: 2px;
+}
+#cancelButton,
+#createButton{
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+#cancelButton:hover,
+#createButton:hover{
+  transform: translateY(-2px);
+}
+#cancelButton:hover{
+  background-color: var(--complementary-1-color);
+  color: var(--bg-color);
+}

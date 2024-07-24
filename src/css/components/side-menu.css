@@ -1,29 +1,43 @@
 .side-menu{
-  padding: 20px;
+  padding: 25px 30px;
   border-right: 1px solid #00000010;
 }
 .side-menu__block:not(:last-child){
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
   margin-bottom: 50px;
 }
 .side-menu__elm{
+  position: relative;
   display: flex;
   flex-direction: row-reverse;
   justify-content: start;
   align-items: center;
   column-gap: 10px;
+  height: 25px;  
   font-family: 'inter';  
   font-weight: 300;
+  cursor: pointer;
 }
-.side-menu__elm>p{
-  font-size: 18px;
+.side-menu__elm>.text{  
+  display: flex;
+  align-items: center;
+  left: 35px;
+  width: 100%;
+  height: inherit;
+  transition: all .3s ease-in-out;
+}
+.side-menu__elm p{  
+  font-size: 1rem;  
 }
 .side-menu__elm>img{
   width: 25px;
-  height: 25px;  
+  height: inherit;
 }
-.profile-photo>p{
+.profile-photo>p{   
   font-size: .75rem;
-  font-weight: 400;
+  font-weight: 400;  
 }
 .add,
 .projects,
@@ -32,13 +46,31 @@
 }
 .add{
   color: var(--secundary-color);
+  transition: transform .3s ease-in-out;
 }
 .projects,
 .notes{
   color: var(--complementary-2-color);
 }
 .arrow{
+  position: absolute;
+  left: 110px;
   width: 18px;
   height: 18px;
   transform: rotate(-90deg);
+  transition: left .3s ease-in-out;
+}
+/* states */
+.projects:hover .arrow{
+  left: 115px;
+}
+:is(
+.add,
+.inbox,
+.today,
+.next-week,
+.projects,
+.notes):hover .text{
+  width: 100%;
+  padding-left: 5px;
 }

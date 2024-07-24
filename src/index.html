@@ -37,34 +37,147 @@
         </div>
         <div class="side-menu__block">
           <div class="side-menu__elm add">
-            <p>Add task</p>
+            <div class="text">
+              <p>Add task</p>
+            </div>
           </div>
           <div class="side-menu__elm inbox">
-            <p>Inbox</p>
+            <div class="text">              
+              <p>Inbox</p>
+            </div>
           </div>
           <div class="side-menu__elm today">
-            <p>Today's tasks</p>
+            <div class="text">              
+              <p>Today's tasks</p>
+            </div>
           </div>
           <div class="side-menu__elm next-week">
-            <p>Next week</p>
+            <div class="text">              
+              <p>Next week</p>
+            </div>
           </div>
         </div>
         <div class="side-menu__block">
           <div class="side-menu__elm projects">
+            <div class="text">
+              <p>Projects</p>
+            </div>
             <div class="arrow">              
             </div>
-            <p>Projects</p>
           </div>
         </div>
         <div class="side-menu__block">
           <div class="side-menu__elm notes">
-            <p>Notes</p>
+            <div class="text">
+              <p>Notes</p>
+            </div>
           </div> 
         </div>
       </div>
-      <div class="list">
 
+      <div class="list">
+        <h2 class="list__title">Your inbox</h2>        
+        <div class="list__rows">
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+          <div class="row">
+            <h3>Task title</h3>
+            <div class="row__description">
+
+            </div>
+            <div class="row__meta">
+
+            </div>
+          </div>
+        </div>
       </div>
+
+      <dialog class="modal" id="addTask">
+        <div class="wraper">
+          <div class="modal__title">
+            <h2>New Task</h2>
+            <p>What's the new thing to do</p>
+          </div>
+          <form method="dialog">
+            <div class="new-task__title">              
+              <input type="text" id="taskTitle" name="taskTitle" placeholder="Task title..." required>
+            </div>
+            <div class="new-task__dd-inputs">
+              <div class="new-task__date">
+                <label for="taskDueDate">Due Date</label>
+                <input type="date" id="taskDueDate" name="taskDueDate" required>
+              </div>
+              <div class="new-task__priority">
+                <label for="taskPriority">Priority</label>
+                <select name="taskPriority" id="taskPriority">
+                  <option value="urgent">Urgent</option>
+                  <option value="later">For later</option>
+                </select>
+              </div>
+            </div>
+            <div class="new-task__description">
+              <label for="taskDescription">Description</label>
+              <textarea id="taskDescription" name="taskDescription"></textarea>
+            </div>
+            <div class="new-task__actions">
+              <button type="submit" id="createButton">Create</button>
+              <button type="button" id="cancelButton">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </dialog>
     </div>
   </div>
 </body>

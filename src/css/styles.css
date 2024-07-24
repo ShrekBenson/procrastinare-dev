@@ -2,6 +2,7 @@
 @import url(./components/header.css);
 @import url(./components/side-menu.css);
 @import url(./components/to-do-list.css);
+@import url(./components/modal.css);
 
 @font-face {
   font-family: 'inter';
@@ -23,13 +24,16 @@
   --low-color: #365E32;
   --high-color: #BF3131;
 }
-html{
+*, 
+*::before, 
+*::after{
   box-sizing: border-box;
-  color: var(--main-color);  
+  margin: 0;
+  outline: none;
 }
 body{
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   background-color: var(--complementary-1-color);
   height: 100svh;
 }

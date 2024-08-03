@@ -1,4 +1,4 @@
-import Modal from './modal';
+import { ShowModal } from "../utils";
 
 const requireIcons = require.context('../../icons', false, /\.svg$/);
 const icons = requireIcons.keys().map(requireIcons);
@@ -19,15 +19,7 @@ function setIcons() {
   });
 }
 
-function showModalForm() {  
-  const addButton = menuOpts["add"];
-
-  addButton.addEventListener('click', function () {
-    Modal(true);
-  });
-}
-
 export default function sideMenu() {
   setIcons();
-  showModalForm();
+  menuOpts.add.addEventListener('click', () => {ShowModal(true)});
 }

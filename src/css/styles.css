@@ -2,6 +2,7 @@
 @import url(./components/header.css);
 @import url(./components/side-menu.css);
 @import url(./components/to-do-list.css);
+@import url(./components/to-do-row.css);
 @import url(./components/modal.css);
 
 @font-face {
@@ -32,13 +33,12 @@
   outline: none;
 }
 body{
-  display: flex;
-  flex-direction: column;  
-  background-color: var(--complementary-1-color);
+  display: grid;
+  grid-template-rows: auto calc(100% - 50px);
   height: 100svh;
+  background-color: var(--complementary-1-color);
 }
 .container {
-  flex: 1;
   padding: 25px;
 }
 .content{

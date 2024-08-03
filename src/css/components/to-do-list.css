@@ -1,7 +1,9 @@
 .list{
   display: grid;
   grid-template-rows: auto 1fr;
+  row-gap: 25px;
   padding: 100px 100px 25px 100px;
+  overflow-y: hidden;
 }
 .list__title{  
   font-family: 'Inter';
@@ -12,11 +14,6 @@
 .list__rows{
   display: flex;
   flex-direction: column;
-  height: inherit;
+  row-gap: 10px;
   overflow-y: auto;
-}
-.row{
-  flex-shrink: 0;
-  height: 100px;
-  border: 1px solid black;
 }

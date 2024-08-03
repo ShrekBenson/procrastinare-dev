@@ -31,12 +31,18 @@ dialog::backdrop{
   color: var(--bg-color);
 }
 .modal__title>h2{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;  
+  align-items: center;
+  column-gap: 5px;
   font-size: 1rem;
   font-weight: 600;
 }
 .modal__title>p{
+  padding-left: 20px;
   font-size: .75rem;
-  font-weight: 400;
+  font-weight: 400;  
 }
 .modal__title,
 .wraper>form{
@@ -57,6 +63,7 @@ dialog::backdrop{
   border: none;
   outline: none;
   font-size: 1.25rem;
+  font-weight: 600;
   border-bottom: 2px solid #00000030;
 }
 .new-task__title>input::placeholder{  
@@ -87,16 +94,18 @@ dialog::backdrop{
   height: 25px;
 }
 .new-task__description>textarea{
+  padding: 10px;
   resize: none;
   height: 100px;
   font-size: 1rem;
+  font-weight: 300;
 }
 .new-task__actions{
   display: flex;
   justify-content: space-between;
   margin-top: auto;
 }
-#createButton{
+#saveButton{
   width: 150px;
   height: 25px;
   font-size: .75rem;
@@ -117,12 +126,12 @@ dialog::backdrop{
   border-radius: 2px;
 }
 #cancelButton,
-#createButton{
+#saveButton{
   transition: all .2s ease-in-out;
   cursor: pointer;
 }
 #cancelButton:hover,
-#createButton:hover{
+#saveButton:hover{
   transform: translateY(-2px);
 }
 #cancelButton:hover{

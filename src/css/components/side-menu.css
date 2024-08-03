@@ -60,7 +60,6 @@
   transform: rotate(-90deg);
   transition: left .3s ease-in-out;
 }
-/* states */
 .projects:hover .arrow{
   left: 115px;
 }

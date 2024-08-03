@@ -76,82 +76,21 @@
       </div>
 
       <div class="list">
-        <h2 class="list__title">Your inbox</h2>        
+        <h2 class="list__title" id="listTitle">Your inbox</h2>
         <div class="list__rows">
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
-          <div class="row">
-            <h3>Task title</h3>
-            <div class="row__description">
-
-            </div>
-            <div class="row__meta">
-
-            </div>
-          </div>
+                    
         </div>
       </div>
 
-      <dialog class="modal" id="addTask">
+      <dialog class="modal" id="saveTask">
         <div class="wraper">
-          <div class="modal__title">
-            <h2>New Task</h2>
+          <div class="modal__title">            
+            <h2 class="title" id="modalTitle"></h2>
             <p>What's the new thing to do</p>
+            <input type="text" id="taskId" hidden>
           </div>
           <form method="dialog">
-            <div class="new-task__title">              
+            <div class="new-task__title">
               <input type="text" id="taskTitle" name="taskTitle" placeholder="Task title..." required>
             </div>
             <div class="new-task__dd-inputs">
@@ -161,9 +100,9 @@
               </div>
               <div class="new-task__priority">
                 <label for="taskPriority">Priority</label>
-                <select name="taskPriority" id="taskPriority">
-                  <option value="urgent">Urgent</option>
-                  <option value="later">For later</option>
+                <select name="taskPriority" id="taskPriority" required>
+                  <option value="high">Urgent</option>
+                  <option value="low">For later</option>
                 </select>
               </div>
             </div>
@@ -172,7 +111,7 @@
               <textarea id="taskDescription" name="taskDescription"></textarea>
             </div>
             <div class="new-task__actions">
-              <button type="submit" id="createButton">Create</button>
+              <button type="button" id="saveButton">Create</button>
               <button type="button" id="cancelButton">Cancel</button>
             </div>
           </form>

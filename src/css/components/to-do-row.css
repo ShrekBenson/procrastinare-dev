@@ -7,7 +7,7 @@
   font-family: 'inter';
   border-bottom: 1px solid #00000020;
 }
-.row>h3{
+.rowTitle{
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--complementary-1-color);
@@ -28,7 +28,7 @@
   height: 16px;
   accent-color: var(--secundary-color);
 }
-#rowDescription{
+.rowDescription{
   max-width: 60%;
   height: 20px;
   font-size: 1.125rem;
@@ -36,6 +36,11 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.rowTitle,
+.rowDescription,
+.meta{
+  transition: all .5s ease-in-out;
 }
 .meta{
   justify-content: space-between;
@@ -95,4 +100,7 @@
 }
 .low{
   color: var(--low-color);
+}
+.done{  
+  opacity: .5;
 }

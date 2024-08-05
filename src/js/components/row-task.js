@@ -1,4 +1,4 @@
-import { ShowModal } from '../utils';
+import { ShowModal, DeleteTask } from '../utils';
 import Low from '../../icons/task/low.svg';
 import High from '../../icons/task/high.svg';
 import Edit from '../../icons/task/edit.svg';
@@ -91,6 +91,24 @@ export default function row(id, title, description, dueDate, priority) {
     const dataTask = tasks[i];
     
     ShowModal(true, 'update', dataTask);
+  });
+
+  buttonDelete.addEventListener('click', () => {
+    DeleteTask(id);
+  });
+
+  checkBox.addEventListener('change', () => {
+    taskTitle.classList.toggle('done');
+    taskDescription.classList.toggle('done');
+    meta.classList.toggle('done');
+    
+    if (checkBox.checked) {
+      buttonEdit.disabled = true;
+      buttonDelete.disabled = true;
+    } else {
+      buttonEdit.disabled = false;
+      buttonDelete.disabled = false;
+    }
   });
 
   return row;

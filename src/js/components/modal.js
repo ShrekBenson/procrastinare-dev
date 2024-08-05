@@ -1,4 +1,4 @@
-import { ShowModal, SaveTask, ValidForm, AddTask, UpdateTask } from '../utils';
+import { ShowModal, SaveTask, ValidForm, AddTask, UpdateTask, AutoFill } from '../utils';
 import titleIcon from '../../icons/modal/modalTitle.svg'
 
 const modal = document.getElementById('saveTask');
@@ -30,35 +30,35 @@ function save() {
   UpdateTask(formControllers.id.value, formControllers);
 }
 
-function modalHandler(e) {
+function hide() {
+  ShowModal(false)
+}
+
+function hideOutOfModal(e) {
   if (!wraper.contains(e.target)) ShowModal(false);
 }
 
 export default function modalForm(type, data) {
+  modal.removeEventListener('click', hideOutOfModal);
   saveButton.removeEventListener('click', create);  
   saveButton.removeEventListener('click', save);
+  cancelButton.removeEventListener('click', hide);
 
   if (type === 'create' && !data) {
     modalTitle.textContent = 'New Task';
+    saveButton.textContent = 'Create';
     saveButton.addEventListener('click', create);
   } else {
     modalTitle.textContent = 'Edit Task';
-    formControllers.id.value = data.id;
-    formControllers.title.value = data.title;
-    formControllers.date.value = data.date;
-    formControllers.priority.value = data.priority;
-    formControllers.description.value = data.description;
+    saveButton.textContent = 'Save';
+    AutoFill(formControllers, data);
     
     saveButton.addEventListener('click', save);
   }
 
-  modalTitle.appendChild(modalTitleIcon);
-  cancelButton.removeEventListener('click', function () { ShowModal(false); });
-  modal.removeEventListener('click', modalHandler);
-  cancelButton.addEventListener('click', function () {
-    ShowModal(false);
-  });
-  modal.addEventListener('click', modalHandler);
+  modalTitle.appendChild(modalTitleIcon);  
+  cancelButton.addEventListener('click', hide);
+  modal.addEventListener('click', hideOutOfModal);
 
   return modal;
 }

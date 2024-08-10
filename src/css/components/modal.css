@@ -1,6 +1,6 @@
 dialog::backdrop{
   backdrop-filter: blur(6px);
-  background-color: transparent;
+  background-color: #00000025;
 }
 .modal{
   position: fixed;
@@ -11,7 +11,7 @@ dialog::backdrop{
   height: 400px;
   padding: 0;
   border: none;
-  border-radius: 10px;
+  border-radius: 10px;  
 }
 .wraper{
   display: flex;
@@ -20,13 +20,12 @@ dialog::backdrop{
   width: inherit;
   height: inherit;
   font-family: 'Inter';
-  border: 1px solid #00000010;
 }
 .modal__title{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60px;
+  height: 60px;  
   background-color: var(--main-color);
   color: var(--bg-color);
 }
@@ -100,12 +99,15 @@ dialog::backdrop{
   font-size: 1rem;
   font-weight: 300;
 }
+.new-task__description>textarea.note{
+  height: 190px;
+}
 .new-task__actions{
   display: flex;
   justify-content: space-between;
   margin-top: auto;
 }
-#saveButton{
+.saveButton{
   width: 150px;
   height: 25px;
   font-size: .75rem;
@@ -115,7 +117,7 @@ dialog::backdrop{
   border: none;
   border-radius: 2px;
 }
-#cancelButton{
+.cancelButton{
   width: 100px;
   height: 25px;
   font-size: .75rem;
@@ -125,16 +127,16 @@ dialog::backdrop{
   border: 1px solid var(--complementary-1-color);
   border-radius: 2px;
 }
-#cancelButton,
-#saveButton{
+.cancelButton,
+.saveButton{
   transition: all .2s ease-in-out;
   cursor: pointer;
 }
-#cancelButton:hover,
-#saveButton:hover{
+.cancelButton:hover,
+.saveButton:hover{
   transform: translateY(-2px);
 }
-#cancelButton:hover{
+.cancelButton:hover{
   background-color: var(--complementary-1-color);
   color: var(--bg-color);
 }

@@ -4,6 +4,7 @@
 @import url(./components/to-do-list.css);
 @import url(./components/to-do-row.css);
 @import url(./components/modal.css);
+@import url(./components/note.css);
 
 @font-face {
   font-family: 'inter';

@@ -6,7 +6,7 @@ export default class Task{
   #description;
   #dueDate;
   #priority;
-  #isDone = false;  
+  #isDone = false;
 
   constructor(title, description, dueDate, priority) {    
     this.#id  = Math.floor(Math.random()*10000);
@@ -66,7 +66,8 @@ export default class Task{
       title: this.#title,
       description: this.#description,
       date: this.#dueDate,
-      priority: this.#priority
+      priority: this.#priority,
+      done: this.#isDone
     };
   }
 }

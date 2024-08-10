@@ -1,17 +1,20 @@
 import { Row } from "../components";
 import { ShowModal } from "./";
 
-const list = document.querySelector(".list__rows");
 
 export default function addTask(task) {
+  const list = document.querySelector(".list__rows");
   const rowTask = Row(
     task.id,
     task.title,
     task.description,
     task.date,
-    task.priority
+    task.priority,
+    task.done
   )
   
-  list.appendChild(rowTask);
+  if (list)
+    list.appendChild(rowTask);  
+
   ShowModal(false);
 }

@@ -1,8 +1,8 @@
 import { Task } from '../classes';
 
-let tasks = JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')) : [];
 
 export default function saveNewTaskToStorage(inputs) {
+  let tasks = JSON.parse(localStorage.getItem('tasks')) ? JSON.parse(localStorage.getItem('tasks')) : [];
   const { title, description, date, priority } = inputs;
 
   const newTask = new Task(

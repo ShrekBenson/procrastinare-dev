@@ -1,11 +1,10 @@
-import { ShowModal, DeleteTask } from '../utils';
+import { ShowModal, DeleteTask, StatusTask } from '../utils';
+import { TaskStorage } from '.';
 import Low from '../../icons/task/low.svg';
 import High from '../../icons/task/high.svg';
 import Edit from '../../icons/task/edit.svg';
 
-const rowsList = document.querySelector('.list__rows');
-
-export default function row(id, title, description, dueDate, priority) {
+export default function row(id, title, description, dueDate, priority, done = false) {
   const low = new Image();
   const high = new Image();
   const edit = new Image();
@@ -29,6 +28,7 @@ export default function row(id, title, description, dueDate, priority) {
   checkBox.setAttribute('type', 'checkbox');
   checkBox.setAttribute('name', 'done');
   checkBox.id = `done-${id}`;
+  checkBox.checked = done;
 
   const taskDescription = document.createElement('p');
   taskDescription.classList.add('rowDescription');
@@ -57,7 +57,7 @@ export default function row(id, title, description, dueDate, priority) {
 
   const buttonEdit = document.createElement('button');  
   buttonEdit.classList.add('editTask');
-  buttonEdit.textContent = 'Edit';
+  buttonEdit.textContent = 'Details';
 
   const buttonDelete = document.createElement('button');
   buttonDelete.classList.add('deleteTask');
@@ -98,18 +98,15 @@ export default function row(id, title, description, dueDate, priority) {
   });
 
   checkBox.addEventListener('change', () => {
-    taskTitle.classList.toggle('done');
-    taskDescription.classList.toggle('done');
-    meta.classList.toggle('done');
-    
-    if (checkBox.checked) {
-      buttonEdit.disabled = true;
-      buttonDelete.disabled = true;
-    } else {
-      buttonEdit.disabled = false;
-      buttonDelete.disabled = false;
-    }
+    const i = TaskStorage().findIndex(task => task.id === id);    
+    const tasks = TaskStorage();
+    tasks[i].done = checkBox.checked;
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    StatusTask(checkBox, taskTitle, taskDescription, meta, buttonEdit, buttonDelete);
   });
+  
+  StatusTask(checkBox, taskTitle, taskDescription, meta, buttonEdit, buttonDelete);
 
   return row;
 }

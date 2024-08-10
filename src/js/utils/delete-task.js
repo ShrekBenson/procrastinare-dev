@@ -1,6 +1,8 @@
-const tasks = JSON.parse(localStorage.getItem('tasks'));
+import { TaskStorage } from "../components";
+
 
 export default function deleteTask(id) {
+  const tasks = TaskStorage();
   const i = tasks.findIndex(task => task.id == id);
   const rowTask = document.getElementById(id);
 

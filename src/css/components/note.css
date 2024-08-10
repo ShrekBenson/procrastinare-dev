@@ -1,0 +1,71 @@
+.note-item{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--complementary-1-color);
+}
+.note-item__title{
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  min-height: 15%;
+  padding: 0 25px;
+  background-color: var(--secundary-color);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.note-item__content{
+  height: 60%;
+  padding: 10px 25px 0 25px;  
+}
+.note-item__actions{
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  padding: 0 25px 10px 25px;
+}
+.noteTitle,
+.noteContent{
+  font-family: 'inter';
+  color: var(--bg-color);
+}
+.noteTitle{
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.noteContent{
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 300;
+}
+.editNote{
+  display: flex;
+  align-items: center;
+  padding: 0;  
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform .2s ease-in-out;
+}
+.editNote>img{
+  width: 40px;
+  height: 40px;
+}
+.editNote:hover{
+  transform: translateY(-1px);
+}
+.deleteNote{
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

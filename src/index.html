@@ -77,7 +77,7 @@
 
       <div class="list">
         <h2 class="list__title" id="listTitle">Your inbox</h2>
-        <div class="list__rows">
+        <div class="list__rows" id="taskList">
                     
         </div>
       </div>
@@ -86,7 +86,7 @@
         <div class="wraper">
           <div class="modal__title">            
             <h2 class="title" id="modalTitle"></h2>
-            <p>What's the new thing to do</p>
+            <p></p>
             <input type="text" id="taskId" hidden>
           </div>
           <form method="dialog">
@@ -104,15 +104,15 @@
                   <option value="high">Urgent</option>
                   <option value="low">For later</option>
                 </select>
-              </div>
+              </div>              
             </div>
             <div class="new-task__description">
               <label for="taskDescription">Description</label>
               <textarea id="taskDescription" name="taskDescription"></textarea>
             </div>
             <div class="new-task__actions">
-              <button type="button" id="saveButton"></button>
-              <button type="button" id="cancelButton">Cancel</button>
+              <button type="button" class="saveButton"></button>
+              <button type="button" class="cancelButton">Cancel</button>
             </div>
           </form>
         </div>

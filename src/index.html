@@ -65,6 +65,15 @@
             <div class="arrow">              
             </div>
           </div>
+          <div class="project-list">
+            <div class="project-list__container">
+              <ul class="project-list__list" id="projectList">
+                <li class="project-list__project addProject">
+                  New project<span>+</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="side-menu__block">
           <div class="side-menu__elm notes">
@@ -78,7 +87,7 @@
       <div class="list">
         <h2 class="list__title" id="listTitle">Your inbox</h2>
         <div class="list__rows" id="taskList">
-                    
+          
         </div>
       </div>
 
@@ -104,7 +113,13 @@
                   <option value="high">Urgent</option>
                   <option value="low">For later</option>
                 </select>
-              </div>              
+              </div>
+              <div class="new-task__project">
+                <label for="taskProject">Project</label>
+                <select name="taskProject" id="taskProject">
+                  <option value="none" selected>none</option>
+                </select>
+              </div>
             </div>
             <div class="new-task__description">
               <label for="taskDescription">Description</label>

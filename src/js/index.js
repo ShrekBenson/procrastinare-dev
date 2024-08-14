@@ -1,13 +1,17 @@
 import '../css/styles.css';
-import { AddTask } from './utils';
+import { AddProject, SetTaskList } from './utils';
 import {Menu} from './components';
 
 const taskList = JSON.parse(localStorage.getItem('tasks'));
+const projects = JSON.parse(localStorage.getItem('projects'));
+
 document.addEventListener('DOMContentLoaded', function () {
   
   if (taskList)
-    taskList.forEach(task => {
-      AddTask(task);
+    SetTaskList();
+  if (projects)
+    Object.keys(projects).forEach(project => {
+      AddProject(project);
     });
 
   Menu();

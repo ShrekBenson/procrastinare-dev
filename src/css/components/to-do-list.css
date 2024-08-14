@@ -1,3 +1,13 @@
+@keyframes slidein {
+  from {
+    transform: translateX(-25%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
 .list{
   display: grid;
   grid-template-rows: auto 1fr;
@@ -12,10 +22,11 @@
   font-family: 'Inter';
   font-size: 2rem;
   font-weight: 700;
-  color: var(--complementary-1-color);
+  color: var(--complementary-1-color);  
 }
 .list__rows,
 .list__notes{
+  position: relative;
   padding-right: 10px;
   scrollbar-color: var(--secundary-color) #00000010;
 }
@@ -31,7 +42,7 @@
   grid-auto-rows: 255px;
   gap: 15px;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: auto;  
 }
 .addNote{
   cursor: pointer;
@@ -39,4 +50,24 @@
 }
 .addNote:hover{
   transform: translateY(-2px);
+}
+.banner{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;  
+  font-family: 'inter';
+  text-align: center;
+  color: #00000030;
+}
+.banner>h2{
+  font-size: 3rem;
+}
+.banner>img{
+  width: 150px;
+}
+.slidein{
+  animation-duration: .25s;
+  animation-name: slidein;
 }

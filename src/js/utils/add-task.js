@@ -2,7 +2,7 @@ import { Row } from "../components";
 import { ShowModal } from "./";
 
 
-export default function addTask(task) {
+export default function addTask(task) {  
   const list = document.querySelector(".list__rows");
   const rowTask = Row(
     task.id,
@@ -10,11 +10,12 @@ export default function addTask(task) {
     task.description,
     task.date,
     task.priority,
-    task.done
+    task.done,
+    task.project
   )
   
   if (list)
-    list.appendChild(rowTask);  
+    list.appendChild(rowTask);
 
   ShowModal(false);
 }

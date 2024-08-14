@@ -1,5 +1,6 @@
-import { SetNotes, SetTaskList, ShowModal } from "../utils";
+import { SetNotes, SetProjectList, SetTaskList, ShowModal } from "../utils";
 
+const projects = JSON.parse(localStorage.getItem('projects'));
 const requireIcons = require.context('../../icons', false, /\.svg$/);
 const icons = requireIcons.keys().map(requireIcons);
 const menuOpts = {};
@@ -24,15 +25,19 @@ function addHandler() {
 }
 
 function inboxHandler() {
-  SetTaskList();
+  SetTaskList();  
 }
 
 function todayHandler() {
-  SetTaskList('today');
+  SetTaskList('today');  
 }
 
 function nextWeekHandler() {
-  SetTaskList('next-week');
+  SetTaskList('next-week');  
+}
+
+function projectListHandler() {  
+  SetProjectList();
 }
 
 function notesHandler() {  
@@ -46,10 +51,12 @@ export default function sideMenu() {
   menuOpts['today'].removeEventListener('click', todayHandler);
   menuOpts['next-week'].removeEventListener('click', nextWeekHandler);
   menuOpts['notes'].removeEventListener('click', notesHandler);
+  menuOpts['projects'].removeEventListener('click', projectListHandler);
 
   menuOpts['add'].addEventListener('click', addHandler);
   menuOpts['inbox'].addEventListener('click', inboxHandler);
   menuOpts['today'].addEventListener('click', todayHandler);
   menuOpts['next-week'].addEventListener('click', nextWeekHandler);
   menuOpts['notes'].addEventListener('click', notesHandler);
+  menuOpts['projects'].addEventListener('click', projectListHandler);
 }

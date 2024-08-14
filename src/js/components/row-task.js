@@ -4,7 +4,7 @@ import Low from '../../icons/task/low.svg';
 import High from '../../icons/task/high.svg';
 import Edit from '../../icons/task/edit.svg';
 
-export default function row(id, title, description, dueDate, priority, done = false) {
+export default function row(id, title, description, dueDate, priority, done = false, project) {
   const low = new Image();
   const high = new Image();
   const edit = new Image();
@@ -86,23 +86,48 @@ export default function row(id, title, description, dueDate, priority, done = fa
   row.appendChild(meta);
 
   buttonEdit.addEventListener('click', () => {
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
-    const i = tasks.findIndex(task => task.id == id);
-    const dataTask = tasks[i];
+    let dataTask = null;
+
+    if (project !== 'none') {
+      const projects = JSON.parse(localStorage.getItem('projects'));
+      const tasksProject = projects[project];
+      const taskIndex = tasksProject.findIndex(task => task.id == id);
+      
+      dataTask = tasksProject[taskIndex];
+    } else {
+      const tasks = TaskStorage();
+      const taskIndex = tasks.findIndex(task => task.id == id);
+
+      dataTask = tasks[taskIndex];
+    }
     
     ShowModal(true, 'update', dataTask);
   });
 
   buttonDelete.addEventListener('click', () => {
-    DeleteTask(id);
+    DeleteTask(id, project);
   });
 
   checkBox.addEventListener('change', () => {
-    const i = TaskStorage().findIndex(task => task.id === id);    
-    const tasks = TaskStorage();
-    tasks[i].done = checkBox.checked;
+    let taskIndex = -1;
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    if (project === 'none') {
+      taskIndex = TaskStorage().findIndex(task => task.id === id);
+      const tasks = TaskStorage();
+      tasks[taskIndex].done = checkBox.checked;
+  
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    } else {
+      const projects = JSON.parse(localStorage.getItem('projects'));
+      const currentProject = projects[project];
+
+      taskIndex = currentProject.findIndex(task => task.id == id);
+      currentProject[taskIndex].done = checkBox.checked;
+      projects[project] = currentProject;
+
+      localStorage.setItem('projects', JSON.stringify(projects));
+    }
+
     StatusTask(checkBox, taskTitle, taskDescription, meta, buttonEdit, buttonDelete);
   });
   

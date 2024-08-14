@@ -1,4 +1,4 @@
-export default function autoFillModalForm(inputs, data, form='task') {
+export default function autoFillModalForm(inputs, data, form = 'task') {
   if (form !== 'task') {
     inputs.id.value = data.id;
     inputs.title.value = data.title;
@@ -8,6 +8,7 @@ export default function autoFillModalForm(inputs, data, form='task') {
     inputs.title.value = data.title;
     inputs.date.value = data.date;
     inputs.priority.value = data.priority;
+    inputs.project.value = data.project;
     inputs.description.value = data.description;
   }
 }

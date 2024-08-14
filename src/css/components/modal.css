@@ -15,8 +15,7 @@ dialog::backdrop{
 }
 .wraper{
   display: flex;
-  flex-direction: column;
-  row-gap: 10px;
+  flex-direction: column;  
   width: inherit;
   height: inherit;
   font-family: 'Inter';
@@ -75,6 +74,7 @@ dialog::backdrop{
 }
 .new-task__date,
 .new-task__priority,
+.new-task__project,
 .new-task__description{
   font-size: .75rem;
   display: flex;
@@ -83,12 +83,14 @@ dialog::backdrop{
 }
 .new-task__date>label,
 .new-task__priority>label,
+.new-task__project>label,
 .new-task__description>label{
   font-weight: 600;
   color: var(--complementary-1-color);
 }
 .new-task__date>input,
-.new-task__priority>select{
+.new-task__priority>select,
+.new-task__project>select{
   width: 150px;
   height: 25px;
 }
@@ -139,4 +141,10 @@ dialog::backdrop{
 .cancelButton:hover{
   background-color: var(--complementary-1-color);
   color: var(--bg-color);
+}
+.no-margin{
+  margin: 0;
+}
+.project-size{
+  height: 180px;
 }

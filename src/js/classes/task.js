@@ -6,14 +6,16 @@ export default class Task{
   #description;
   #dueDate;
   #priority;
+  #project;
   #isDone = false;
 
-  constructor(title, description, dueDate, priority) {    
+  constructor(title, description, dueDate, priority, project) {    
     this.#id  = Math.floor(Math.random()*10000);
     this.#title = title;
     this.#description = description;
     this.#dueDate = dueDate;
     this.#priority = priority;
+    this.#project = project;
   }
 
   get id() {
@@ -34,6 +36,10 @@ export default class Task{
 
   get priority() {
     return this.#priority;
+  }
+
+  get project() {
+    return this.#project;
   }
 
   get isDone() {
@@ -67,6 +73,7 @@ export default class Task{
       description: this.#description,
       date: this.#dueDate,
       priority: this.#priority,
+      project: this.#project,
       done: this.#isDone
     };
   }

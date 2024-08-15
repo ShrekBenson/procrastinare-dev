@@ -1,4 +1,4 @@
-import { ShowModal, SaveTask, ValidForm, AddTask, UpdateTask, AutoFill, SaveNote, UpdateNote, AddNote, SaveProject, AddProject } from '../utils';
+import { ShowModal, SaveTask, ValidForm, AddTask, UpdateTask, AutoFill, SaveNote, UpdateNote, AddNote, SaveProject, AddProject, SetTaskList, SetNotes } from '../utils';
 import TitleIcon from '../../icons/modal/modalTitle.svg'
 
 const modal = document.getElementById('saveTask');
@@ -24,16 +24,20 @@ const formControllers = {
 };
 
 function create() {
-  if (ValidForm(formControllers)) {
-    AddTask(SaveTask(formControllers));
+  if (ValidForm(formControllers)) {    
+    SaveTask(formControllers);
+    SetTaskList();
+    ShowModal(false);
     return;
   }
   alert("Please, fill the empty fields");
 }
 
 function createNote() {
-  if (ValidForm(formControllers, 'note')) {
-    AddNote(SaveNote(formControllers.title, formControllers.description));    
+  if (ValidForm(formControllers, 'note')) {    
+    SaveNote(formControllers.title, formControllers.description);
+    SetNotes();
+    ShowModal(false);
     return;
   }
   alert("Please, fill the empty fields");

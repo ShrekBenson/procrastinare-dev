@@ -1,4 +1,4 @@
-import { ShowModal } from ".";
+import { SetNotes, ShowModal } from ".";
 import { NoteItem } from "../components";
 
 const list = document.getElementById("taskList");
@@ -10,6 +10,5 @@ export default function addNote(note) {
     note.content
   );
   
-  list.appendChild(noteItem);
-  ShowModal(false);
+  list.appendChild(noteItem);  
 }

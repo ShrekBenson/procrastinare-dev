@@ -5,7 +5,7 @@ import { Banner, TaskList, TaskStorage } from "../components";
 const listTitle = document.getElementById('listTitle');
 const addNoteButton = document.querySelector('.addNote');
 
-export default function getInboxList(type = 'inbox', project = null) {
+export default function getTaskList(type = 'inbox', project = null) {
   const list = TaskList();
   let tasks = TaskStorage();
   listTitle.classList.add('slidein');

@@ -14,4 +14,5 @@ export { default as AutoFill } from './auto-fill';
 export { default as SetTaskList } from './set-task-list';
 export { default as SetProjectList } from './set-project-list';
 export { default as SetNotes } from './set-notes';
+export { default as SetStorage } from './set-storage';
 export { default as StatusTask } from './status-task';

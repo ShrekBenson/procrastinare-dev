@@ -1,5 +1,5 @@
 import { Row } from "../components";
-import { ShowModal } from "./";
+import { SetTaskList, ShowModal } from "./";
 
 
 export default function addTask(task) {  
@@ -14,8 +14,6 @@ export default function addTask(task) {
     task.project
   )
   
-  if (list)
-    list.appendChild(rowTask);
-
-  ShowModal(false);
+  if (list)    
+    list.appendChild(rowTask);  
 }
